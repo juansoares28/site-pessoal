@@ -1,0 +1,226 @@
+/* --- Reset Básico & Variáveis --- */
+:root {
+    --cor-primaria: #0a2ff1; /* Azul vibrante */
+    --cor-secundaria: #04146c; /* Azul escuro */
+    --cor-fundo: #f4f7fc;
+    --cor-texto: #333;
+    --cor-branca: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho --- */
+header {
+    background-color: var(--cor-branca);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- Seções Principais --- */
+main {
+    padding-top: 80px; /* Espaçamento para o cabeçalho fixo */
+}
+
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--cor-secundaria);
+}
+
+/* --- Seção Hero --- */
+#hero {
+    background: linear-gradient(rgba(10, 47, 241, 0.7), rgba(4, 20, 108, 0.7)), url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* --- Seção Sobre --- */
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--cor-primaria);
+}
+
+/* --- Seção Projetos --- */
+#projetos {
+    background-color: var(--cor-branca);
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-projeto {
+    background: var(--cor-fundo);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card-projeto h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.card-projeto a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.card-projeto a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Seção Contato --- */
+#contato {
+    text-align: center;
+}
+
+#contato p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav {
+        margin-top: 15px;
+    }
+
+    main {
+        padding-top: 120px;
+    }
+
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
